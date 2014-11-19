@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	##############################################################################
+	#
+	#    presta_history_report module for OpenERP, Associate product with compatible brands
+	#    Copyright (C) 2014 ozytwyst Julien Thomazeau [ozydev@julienthomazeau.fr]
+	#
+	#    This file is a part of product_brands
+	#
+	#    product_brands is free software: you can redistribute it and/or modify
+	#    it under the terms of the GNU Affero General Public License as published by
+	#    the Free Software Foundation, either version 3 of the License, or
+	#    (at your option) any later version.
+	#
+	#    product_brands is distributed in the hope that it will be useful,
+	#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	#    GNU Affero General Public License for more details.
+	#
+	#    You should have received a copy of the GNU Affero General Public License
+	#    along with this program.  If not, see [http://www.gnu.org/licenses/].
+	#
+	##############################################################################
+		<record model="ir.ui.view" id="view_presta_history_report_tree">
+			<field name="name">presta.history.report.tree</field>
+			<field name="model">presta.history.report</field>
+			<field name="arch" type="xml">
+				<tree string="product.history.report">
+					<field name="date_connection"/>
+					<field name="email"/>
+					<field name="society_id"/>
+					<field name="pricelist_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_history">
+			<field name="name">History</field>
+                        <field name="type">ir.actions.act_window</field>
+			<field name="res_model">presta.history.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="History" id="menu_history" action="action_history"/>
+	</data>
+</openerp>
